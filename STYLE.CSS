@@ -1,0 +1,50 @@
+/* styles.css */
+
+/* Configuração do Tailwind para usar a fonte Inter e cores personalizadas */
+/* Este bloco é geralmente configurado em um arquivo tailwind.config.js
+   mas para a demonstração, os valores são listados aqui para referência. */
+/*
+tailwind.config = {
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+                'primary-blue': '#0056b3',
+                'secondary-green': '#28a745',
+                'light-gray-bg': '#f8f9fa',
+                'dark-text': '#333',
+                'medium-gray-text': '#6c757d',
+            }
+        }
+    }
+}
+*/
+
+/* Estilos globais ou específicos que não são puramente Tailwind */
+body {
+    font-family: 'Inter', sans-serif; /* Garante a fonte Inter */
+}
+
+/* Você pode adicionar mais CSS personalizado aqui, se necessário. */
+/* Por exemplo, para ajustar o mapa ou outros elementos específicos. */
+
+/* Exemplo de como você poderia estilizar o contêiner do mapa se o iframe não se ajustar bem */
+.map-container iframe {
+    width: 100%;
+    height: 300px; /* Altura fixa para o mapa */
+    border: 0;
+}
+
+/* Estilos para o menu mobile, caso precise de ajustes finos além do Tailwind */
+#mobileMenu {
+    /* Por padrão, Tailwind usa hidden/block. Se precisar de transições, adicione aqui */
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+#mobileMenu.open {
+    max-height: 500px; /* Valor suficiente para mostrar todo o menu */
+}
