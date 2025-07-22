@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIMA RPA SOLUTIONS - Automação Inteligente para seu Negócio</title>
+    <!-- Incluindo Tailwind CSS via CDN para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar a fonte Inter e cores personalizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Usando Inter como fonte padrão
+                    },
+                    colors: {
+                        'primary-blue': '#0056b3', // Cor principal da marca
+                        'secondary-green': '#28a745', // Cor para CTAs secundários
+                        'light-gray-bg': '#f8f9fa', // Fundo para seções alternadas
+                        'dark-text': '#333', // Cor de texto principal
+                        'medium-gray-text': '#6c757d', // Cor de texto secundária
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Adicionando Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="font-sans text-dark-text bg-white">
+
+    <!-- Cabeçalho (Header) -->
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logotipo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="LOGOTIPO/LIMA RPA SOLUTIONS .png" alt="Logotipo LIMA RPA SOLUTIONS" class="h-20 md:h-18 rounded-md">
+                </a>
+            </div>
+            <!-- Menu de Navegação -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Home</a>
+                <a href="#about" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Sobre Nós</a>
+                <a href="#services" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Serviços</a>
+                <a href="#ai-solution-generator" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Gerador de Soluções AI</a>
+                <a href="#contact" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Contato</a>
+            </nav>
+            <!-- Botão de CTA no Header -->
+            <a href="#contact" class="hidden md:inline-block px-6 py-3 border-2 border-primary-blue text-primary-blue font-bold rounded-lg hover:bg-primary-blue hover:text-white transition-all duration-300" id="headerCtaBtn">
+                Solicite um Orçamento
+            </a>
+            <!-- Botão de Menu para Mobile -->
+            <button id="mobileMenuButton" class="md:hidden text-primary-blue text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile (oculto por padrão, será mostrado com JS) -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white py-4 shadow-inner">
+            <nav class="flex flex-col items-center space-y-4">
+                <a href="#home" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Home</a>
+                <a href="#about" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Sobre Nós</a>
+                <a href="#services" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Serviços</a>
+                <a href="#ai-solution-generator" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Gerador de Soluções AI</a>
+                <a href="#contact" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Contato</a>
+                <a href="#contact" class="px-6 py-3 border-2 border-primary-blue text-primary-blue font-bold rounded-lg hover:bg-primary-blue hover:text-white transition-all duration-300">
+                    Solicite um Orçamento
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Hero (Banner Principal) -->
+        <section id="home" class="relative bg-cover bg-center text-white py-24 md:py-36 flex items-center justify-center min-h-[500px]" style="background-image: url('https://placehold.co/1920x800/0056b3/ffffff?text=Fundo+LIMA+RPA&font-size=10');">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Transforme sua Operação com Automação Inteligente</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Otimize processos, reduza custos e aumente a eficiência com as soluções RPA da LIMA SOLUTIONS.</p>
+                <a href="#services" class="inline-block px-8 py-4 bg-primary-blue text-white text-lg font-bold rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300">
+                    Descubra Nossos Serviços
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção "Por Que Escolher a LIMA RPA?" (Diferenciais) -->
+        <section id="about" class="py-16 md:py-24 bg-light-gray-bg">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-12">Por Que Escolher a LIMA RPA?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Item de Diferencial 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-cogs text-5xl text-primary-blue mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-4">Eficiência Comprovada</h3>
+                        <p class="text-medium-gray-text">Automação que garante resultados rápidos e mensuráveis, otimizando seus fluxos de trabalho.</p>
+                    </div>
+                    <!-- Item de Diferencial 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-lightbulb text-5xl text-primary-blue mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-4">Inovação Constante</h3>
+                        <p class="text-medium-gray-text">Soluções atualizadas com as últimas tendências em RPA e inteligência artificial.</p>
+                    </div>
+                    <!-- Item de Diferencial 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-handshake text-5xl text-primary-blue mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-4">Suporte Dedicado</h3>
+                        <p class="text-medium-gray-text">Atendimento personalizado e suporte técnico contínuo para sua total tranquilidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Serviços em Destaque -->
+        <section id="services" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-12">Nossos Serviços em Destaque</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cartão de Serviço 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 text-left">
+                        <i class="fas fa-robot text-4xl text-primary-blue mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-3">Automação de Processos</h3>
+                        <p class="text-medium-gray-text mb-4">Otimizamos suas tarefas repetitivas e baseadas em regras com robôs inteligentes, liberando sua equipe para atividades estratégicas.</p>
+                        <!-- Removido: <a href="#" class="text-primary-blue font-bold hover:underline">Saiba Mais <i class="fas fa-arrow-right ml-2"></i></a> -->
+                    </div>
+                    <!-- Cartão de Serviço 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 text-left">
+                        <i class="fas fa-brain text-4xl text-primary-blue mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-3">Consultoria RPA</h3>
+                        <p class="text-medium-gray-text mb-4">Orientação especializada para identificar, planejar e implementar soluções RPA que se alinham perfeitamente aos seus objetivos de negócio.</p>
+                        <!-- Removido: <a href="#" class="text-primary-blue font-bold hover:underline">Saiba Mais <i class="fas fa-arrow-right ml-2"></i></a> -->
+                    </div>
+                    <!-- Cartão de Serviço 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 text-left">
+                        <i class="fas fa-chalkboard-teacher text-4xl text-primary-blue mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-3">Treinamento e Capacitação</h3>
+                        <p class="text-medium-gray-text mb-4">Capacitamos sua equipe para operar e gerenciar as soluções RPA, garantindo a autonomia e o sucesso a longo prazo.</p>
+                        <!-- Removido: <a href="#" class="text-primary-blue font-bold hover:underline">Saiba Mais <i class="fas fa-arrow-right ml-2"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nova Seção: Gerador de Ideias de Solução RPA com AI -->
+        <section id="ai-solution-generator" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-12">Gerador de Ideias de Solução RPA ✨</h2>
+                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-medium-gray-text">
+                    Descreva um desafio de negócio ou um processo que você gostaria de automatizar, e nossa IA irá sugerir uma ideia de solução de RPA para você!
+                </p>
+                <div class="max-w-2xl mx-auto bg-light-gray-bg p-8 rounded-xl shadow-lg text-left">
+                    <label for="businessChallenge" class="block text-dark-text text-sm font-bold mb-2">
+                        Seu Desafio de Negócio ou Processo:
+                    </label>
+                    <textarea id="businessChallenge" rows="6" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue mb-6" placeholder="Ex: 'Preciso automatizar a entrada de dados de faturas no meu sistema ERP.' ou 'Quero otimizar o processo de atendimento ao cliente.'"></textarea>
+                    <button id="generateSolutionBtn" class="w-full bg-primary-blue hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-300">
+                        Gerar Ideia de Solução ✨
+                    </button>
+                    <div id="solutionLoading" class="hidden text-center mt-6 text-primary-blue">
+                        <i class="fas fa-spinner fa-spin mr-2"></i> Gerando sua ideia de solução...
+                    </div>
+                    <div id="solutionOutput" class="mt-8 p-6 bg-white border border-gray-200 rounded-lg shadow-inner hidden">
+                        <h3 class="text-xl font-semibold text-dark-text mb-4">Sua Ideia de Solução RPA:</h3>
+                        <p id="solutionText" class="text-medium-gray-text whitespace-pre-wrap"></p>
+                    </div>
+                    <div id="errorMessage" class="hidden text-center mt-6 text-red-600">
+                        Ocorreu um erro ao gerar a solução. Por favor, tente novamente.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Chamada para Ação (CTA Secundária) -->
+        <section class="py-16 md:py-24 bg-primary-blue text-white text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para Automatizar seu Futuro?</h2>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Entre em contato conosco hoje mesmo e descubra como as soluções de RPA da LIMA SOLUTIONS podem transformar sua operação e impulsionar seu crescimento.</p>
+                <a href="#contact" class="inline-block px-8 py-4 bg-secondary-green text-white text-lg font-bold rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300">
+                    Fale Conosco Agora!
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contact" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-12">Entre em Contato</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                    <!-- Formulário de Contato -->
+                    <div class="bg-light-gray-bg p-8 rounded-xl shadow-lg text-left">
+                        <h3 class="text-2xl font-semibold text-dark-text mb-6">Envie-nos uma Mensagem</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-dark-text text-sm font-bold mb-2">Nome Completo</label>
+                                <input type="text" id="name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue" placeholder="Seu Nome" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-dark-text text-sm font-bold mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue" placeholder="seu.email@exemplo.com" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-dark-text text-sm font-bold mb-2">Telefone (Opcional)</label>
+                                <input type="tel" id="phone" name="phone" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue" placeholder="(XX) XXXX-XXXX">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-dark-text text-sm font-bold mb-2">Assunto</label>
+                                <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue" placeholder="Assunto da Mensagem" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-dark-text text-sm font-bold mb-2">Mensagem</label>
+                                <textarea id="message" name="message" rows="6" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue" placeholder="Sua mensagem..." required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary-blue hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-300">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                    <!-- Informações de Contato e Mapa -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg text-left">
+                        <h3 class="text-2xl font-semibold text-dark-text mb-6">Nossas Informações</h3>
+                        <!-- Endereço Atualizado -->
+                        <p class="text-medium-gray-text mb-4"><i class="fas fa-map-marker-alt mr-3 text-primary-blue"></i> Rua Arthur Lundgren 23</p>
+                        <!-- Telefone Clicável Atualizado -->
+                        <p class="text-medium-gray-text mb-4">
+                            <i class="fas fa-phone mr-3 text-primary-blue"></i>
+                            <a href="tel:+5511958437220" class="text-medium-gray-text hover:text-primary-blue transition-colors duration-300">(11) 95843-7220</a>
+                        </p>
+                        <!-- Email Clicável Atualizado -->
+                        <p class="text-medium-gray-text mb-4">
+                            <i class="fas fa-envelope mr-3 text-primary-blue"></i>
+                            <a href="mailto:mateuslima5300@gmail.com" class="text-medium-gray-text hover:text-primary-blue transition-colors duration-300">mateuslima5300@gmail.com</a>
+                        </p>
+                        <p class="text-medium-gray-text mb-6"><i class="fas fa-clock mr-3 text-primary-blue"></i> Segunda a Sexta: 9h - 18h</p>
+
+                        <!-- Mapa do Google Maps -->
+                        <div class="map-container rounded-lg overflow-hidden shadow-md">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.018898950293!2d-46.63955798447012!3d-23.56708606771034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c7b9c1d1a1%3A0x2a9a7a6b2a4a7a6b!2sAvenida%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1678901234567!5m2!1spt-BR!2sbr"
+                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé (Footer) -->
+    <footer class="bg-dark-text text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Coluna 1: Contato -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contato</h3>
+                <p class="text-medium-gray-text mb-2">Rua Arthur Lundgren 23</p>
+                <p class="text-medium-gray-text mb-2">Telefone: (11) 95843-7220</p>
+                <p class="text-medium-gray-text">Email: mateuslima5300@gmail.com</p>
+            </div>
+            <!-- Coluna 2: Links Úteis -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Links Úteis</h3>
+                <ul>
+                    <li class="mb-2"><a href="#" class="text-medium-gray-text hover:text-primary-blue transition-colors duration-300">Política de Privacidade</a></li>
+                    <li class="mb-2"><a href="#" class="text-medium-gray-text hover:text-primary-blue transition-colors duration-300">Termos de Uso</a></li>
+                    <li class="mb-2"><a href="#" class="text-medium-gray-text hover:text-primary-blue transition-colors duration-300">Carreiras</a></li>
+                </ul>
+            </div>
+            <!-- Coluna 3: Siga-nos -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Siga-nos</h3>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#" target="_blank" class="text-white hover:text-primary-blue transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="text-white hover:text-primary-blue transition-colors duration-300 text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" class="text-white hover:text-primary-blue transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" class="text-white hover:text-primary-blue transition-colors duration-300 text-2xl"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-medium-gray-text">
+            <p>&copy; 2025 LIMA RPA SOLUTIONS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para interatividade -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Site LIMA RPA SOLUTIONS carregado com sucesso!');
+
+            // --- Menu Mobile ---
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden'); // Alterna a visibilidade do menu
+                });
+
+                // Fechar menu ao clicar em um link (para navegação suave)
+                const mobileNavLinks = mobileMenu.querySelectorAll('a');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden'); // Esconde o menu após clicar
+                    });
+                });
+            }
+
+            // --- Lógica de Envio do Formulário de Contato (Voltou a ser um alert()) ---
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Impede o envio padrão do formulário
+
+                    // Em um ambiente real, você enviaria os dados para um servidor aqui
+                    // Por exemplo, usando `fetch()`:
+                    /*
+                    const formData = new FormData(contactForm);
+                    fetch('/api/send-email', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+                            contactForm.reset(); // Limpa o formulário
+                        } else {
+                            alert('Houve um erro ao enviar a mensagem. Tente novamente.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erro de conexão. Por favor, tente mais tarde.');
+                        alert('Erro de conexão. Por favor, tente mais tarde.');
+                    });
+                    */
+
+                    // Usando alert() como placeholder, mas idealmente você usaria um modal/toast
+                    alert('Sua mensagem foi enviada! Em breve entraremos em contato.');
+                    contactForm.reset(); // Limpa o formulário após "envio"
+                });
+            }
+
+            // --- Scroll Suave para Ancoras ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Previne o comportamento padrão do link (salto imediato)
+                    e.preventDefault();
+
+                    // Obtém o valor do atributo href
+                    const targetId = this.getAttribute('href');
+
+                    // Verifica se o targetId é válido (não é apenas '#' ou vazio)
+                    if (targetId && targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            console.warn(`Elemento com ID '${targetId}' não encontrado.`);
+                        }
+                    } else if (targetId === '#') {
+                        // Se for apenas '#', rola para o topo da página
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // --- Funcionalidade do Gerador de Ideias de Solução RPA com AI (Gemini API) ---
+            const generateSolutionBtn = document.getElementById('generateSolutionBtn');
+            const businessChallengeInput = document.getElementById('businessChallenge');
+            const solutionOutputDiv = document.getElementById('solutionOutput');
+            const solutionTextP = document.getElementById('solutionText');
+            const solutionLoadingDiv = document.getElementById('solutionLoading');
+            const errorMessageDiv = document.getElementById('errorMessage');
+
+            if (generateSolutionBtn && businessChallengeInput && solutionOutputDiv && solutionTextP && solutionLoadingDiv && errorMessageDiv) {
+                generateSolutionBtn.addEventListener('click', async function() {
+                    const prompt = businessChallengeInput.value.trim();
+
+                    if (prompt === "") {
+                        // Substituído alert() por uma mensagem na tela para melhor UX
+                        solutionOutputDiv.classList.add('hidden');
+                        errorMessageDiv.classList.remove('hidden');
+                        errorMessageDiv.textContent = "Por favor, descreva seu desafio de negócio antes de gerar uma solução.";
+                        return;
+                    }
+
+                    // Limpa resultados anteriores e mostra carregamento
+                    solutionOutputDiv.classList.add('hidden');
+                    errorMessageDiv.classList.add('hidden');
+                    solutionLoadingDiv.classList.remove('hidden');
+                    solutionTextP.textContent = '';
+
+                    try {
+                        let chatHistory = [];
+                        chatHistory.push({
+                            role: "user",
+                            parts: [{ text: `Como uma empresa de soluções RPA, me dê uma ideia de como a Automação de Processos Robóticos (RPA) pode resolver o seguinte desafio de negócio: "${prompt}". Seja conciso, profissional e foque nos benefícios da RPA. Responda em português.` }]
+                        });
+
+                        const payload = { contents: chatHistory };
+                        const apiKey = ""; // A chave da API será fornecida em tempo de execução pelo ambiente Canvas
+                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        const result = await response.json();
+
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            const text = result.candidates[0].content.parts[0].text;
+                            solutionTextP.textContent = text;
+                            solutionOutputDiv.classList.remove('hidden');
+                        } else {
+                            errorMessageDiv.classList.remove('hidden');
+                            errorMessageDiv.textContent = "Ocorreu um erro ao gerar a solução. Tente novamente.";
+                            console.error('Estrutura de resposta inesperada da API Gemini:', result);
+                        }
+                    } catch (error) {
+                        errorMessageDiv.classList.remove('hidden');
+                        errorMessageDiv.textContent = "Ocorreu um erro ao gerar a solução. Por favor, tente novamente.";
+                        console.error('Erro ao chamar a API Gemini:', error);
+                    } finally {
+                        solutionLoadingDiv.classList.add('hidden'); // Esconde o carregamento
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
