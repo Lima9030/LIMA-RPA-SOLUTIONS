@@ -6,25 +6,8 @@
     <title>LIMA RPA SOLUTIONS - Automação Inteligente para seu Negócio</title>
     <!-- Incluindo Tailwind CSS via CDN para estilização rápida e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configuração do Tailwind para usar a fonte Inter e cores personalizadas -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'], // Usando Inter como fonte padrão
-                    },
-                    colors: {
-                        'primary-blue': '#0056b3', // Cor principal da marca
-                        'secondary-green': '#28a745', // Cor para CTAs secundários
-                        'light-gray-bg': '#f8f9fa', // Fundo para seções alternadas
-                        'dark-text': '#333', // Cor de texto principal
-                        'medium-gray-text': '#6c757d', // Cor de texto secundária
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Link para o arquivo CSS externo (styles.css) -->
+    <link rel="stylesheet" href="styles.css">
     <!-- Adicionando Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -36,7 +19,7 @@
             <!-- Logotipo -->
             <div class="logo">
                 <a href="index.html">
-                    <img src="LOGOTIPO/LIMA RPA SOLUTIONS .png" alt="Logotipo LIMA RPA SOLUTIONS" class="h-20 md:h-18 rounded-md">
+                    <img src="https://content-fetcher.google-genai.com/api/files/uploaded:LIMA%20RPA%20SOLUTIONS%20.jpg-a7fbe6d5-848d-4359-9dc3-4a29e32b99fd" alt="Logotipo LIMA RPA SOLUTIONS" class="h-16 md:h-20 rounded-md">
                 </a>
             </div>
             <!-- Menu de Navegação -->
@@ -234,10 +217,16 @@
 
                         <!-- Mapa do Google Maps -->
                         <div class="map-container rounded-lg overflow-hidden shadow-md">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.018898950293!2d-46.63955798447012!3d-23.56708606771034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c7b9c1d1a1%3A0x2a9a7a6b2a4a7a6b!2sAvenida%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1678901234567!5m2!1spt-BR!2sbr"
-                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-                            </iframe>
+                            <!--
+                                Para exibir o mapa da "Rua Arthur Lundgren 23",
+                                você precisará ir ao Google Maps, pesquisar pelo endereço,
+                                clicar em "Compartilhar" (ou "Share"),
+                                depois em "Incorporar um mapa" (ou "Embed a map")
+                                e copiar o código `<iframe>` fornecido.
+                                Substitua o `src` abaixo pelo `src` que você copiar do Google Maps.
+                                O iframe atual é um placeholder para a Avenida Paulista.
+                            -->
+                            <img src="https://placehold.co/600x400/cccccc/333333?text=Mapa+da+Rua+Arthur+Lundgren+23" alt="Placeholder do Mapa" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -280,159 +269,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript para interatividade -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Site LIMA RPA SOLUTIONS carregado com sucesso!');
-
-            // --- Menu Mobile ---
-            const mobileMenuButton = document.getElementById('mobileMenuButton');
-            const mobileMenu = document.getElementById('mobileMenu');
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden'); // Alterna a visibilidade do menu
-                });
-
-                // Fechar menu ao clicar em um link (para navegação suave)
-                const mobileNavLinks = mobileMenu.querySelectorAll('a');
-                mobileNavLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        mobileMenu.classList.add('hidden'); // Esconde o menu após clicar
-                    });
-                });
-            }
-
-            // --- Lógica de Envio do Formulário de Contato (Voltou a ser um alert()) ---
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(event) {
-                    event.preventDefault(); // Impede o envio padrão do formulário
-
-                    // Em um ambiente real, você enviaria os dados para um servidor aqui
-                    // Por exemplo, usando `fetch()`:
-                    /*
-                    const formData = new FormData(contactForm);
-                    fetch('/api/send-email', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
-                            contactForm.reset(); // Limpa o formulário
-                        } else {
-                            alert('Houve um erro ao enviar a mensagem. Tente novamente.');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Erro de conexão. Por favor, tente mais tarde.');
-                        alert('Erro de conexão. Por favor, tente mais tarde.');
-                    });
-                    */
-
-                    // Usando alert() como placeholder, mas idealmente você usaria um modal/toast
-                    alert('Sua mensagem foi enviada! Em breve entraremos em contato.');
-                    contactForm.reset(); // Limpa o formulário após "envio"
-                });
-            }
-
-            // --- Scroll Suave para Ancoras ---
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    // Previne o comportamento padrão do link (salto imediato)
-                    e.preventDefault();
-
-                    // Obtém o valor do atributo href
-                    const targetId = this.getAttribute('href');
-
-                    // Verifica se o targetId é válido (não é apenas '#' ou vazio)
-                    if (targetId && targetId !== '#') {
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            targetElement.scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                        } else {
-                            console.warn(`Elemento com ID '${targetId}' não encontrado.`);
-                        }
-                    } else if (targetId === '#') {
-                        // Se for apenas '#', rola para o topo da página
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // --- Funcionalidade do Gerador de Ideias de Solução RPA com AI (Gemini API) ---
-            const generateSolutionBtn = document.getElementById('generateSolutionBtn');
-            const businessChallengeInput = document.getElementById('businessChallenge');
-            const solutionOutputDiv = document.getElementById('solutionOutput');
-            const solutionTextP = document.getElementById('solutionText');
-            const solutionLoadingDiv = document.getElementById('solutionLoading');
-            const errorMessageDiv = document.getElementById('errorMessage');
-
-            if (generateSolutionBtn && businessChallengeInput && solutionOutputDiv && solutionTextP && solutionLoadingDiv && errorMessageDiv) {
-                generateSolutionBtn.addEventListener('click', async function() {
-                    const prompt = businessChallengeInput.value.trim();
-
-                    if (prompt === "") {
-                        // Substituído alert() por uma mensagem na tela para melhor UX
-                        solutionOutputDiv.classList.add('hidden');
-                        errorMessageDiv.classList.remove('hidden');
-                        errorMessageDiv.textContent = "Por favor, descreva seu desafio de negócio antes de gerar uma solução.";
-                        return;
-                    }
-
-                    // Limpa resultados anteriores e mostra carregamento
-                    solutionOutputDiv.classList.add('hidden');
-                    errorMessageDiv.classList.add('hidden');
-                    solutionLoadingDiv.classList.remove('hidden');
-                    solutionTextP.textContent = '';
-
-                    try {
-                        let chatHistory = [];
-                        chatHistory.push({
-                            role: "user",
-                            parts: [{ text: `Como uma empresa de soluções RPA, me dê uma ideia de como a Automação de Processos Robóticos (RPA) pode resolver o seguinte desafio de negócio: "${prompt}". Seja conciso, profissional e foque nos benefícios da RPA. Responda em português.` }]
-                        });
-
-                        const payload = { contents: chatHistory };
-                        const apiKey = ""; // A chave da API será fornecida em tempo de execução pelo ambiente Canvas
-                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                        const response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-
-                        const result = await response.json();
-
-                        if (result.candidates && result.candidates.length > 0 &&
-                            result.candidates[0].content && result.candidates[0].content.parts &&
-                            result.candidates[0].content.parts.length > 0) {
-                            const text = result.candidates[0].content.parts[0].text;
-                            solutionTextP.textContent = text;
-                            solutionOutputDiv.classList.remove('hidden');
-                        } else {
-                            errorMessageDiv.classList.remove('hidden');
-                            errorMessageDiv.textContent = "Ocorreu um erro ao gerar a solução. Tente novamente.";
-                            console.error('Estrutura de resposta inesperada da API Gemini:', result);
-                        }
-                    } catch (error) {
-                        errorMessageDiv.classList.remove('hidden');
-                        errorMessageDiv.textContent = "Ocorreu um erro ao gerar a solução. Por favor, tente novamente.";
-                        console.error('Erro ao chamar a API Gemini:', error);
-                    } finally {
-                        solutionLoadingDiv.classList.add('hidden'); // Esconde o carregamento
-                    }
-                });
-            }
-        });
-    </script>
+    <!-- Link para o arquivo JavaScript externo (script.js) -->
+    <script src="script.js"></script>
 </body>
 </html>
