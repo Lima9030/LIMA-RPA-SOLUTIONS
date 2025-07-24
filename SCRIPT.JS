@@ -1,5 +1,4 @@
 // script.js
-
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Site LIMA RPA SOLUTIONS carregado com sucesso!');
 
@@ -10,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden'); // Alterna a visibilidade do menu
-            // Se você usar a transição via max-height no CSS, pode alternar uma classe 'open'
-            // mobileMenu.classList.toggle('open');
         });
 
         // Fechar menu ao clicar em um link (para navegação suave)
@@ -19,17 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', function() {
                 mobileMenu.classList.add('hidden'); // Esconde o menu após clicar
-                // mobileMenu.classList.remove('open'); // Se usar a classe 'open'
             });
         });
     }
 
     // --- Lógica de Envio do Formulário de Contato (Voltou a ser um alert()) ---
+    // O formulário de contato foi removido do HTML, então esta lógica não será mais executada.
+    // Mantida para referência, caso o formulário seja adicionado novamente.
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault(); // Impede o envio padrão do formulário
-
             // Em um ambiente real, você enviaria os dados para um servidor aqui
             // Por exemplo, usando `fetch()`:
             /*
@@ -52,8 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Erro de conexão. Por favor, tente mais tarde.');
             });
             */
-
-            // Usando alert() como placeholder, mas idealmente você usaria um modal/toast
             alert('Sua mensagem foi enviada! Em breve entraremos em contato.');
             contactForm.reset(); // Limpa o formulário após "envio"
         });
@@ -89,6 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // --- Funcionalidade do Gerador de Ideias de Solução RPA com AI (Gemini API) ---
+    // A seção do gerador de ideias foi removida do HTML, então esta lógica não será mais executada.
+    // Mantida para referência, caso a seção seja adicionada novamente.
     const generateSolutionBtn = document.getElementById('generateSolutionBtn');
     const businessChallengeInput = document.getElementById('businessChallenge');
     const solutionOutputDiv = document.getElementById('solutionOutput');
@@ -101,14 +98,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const prompt = businessChallengeInput.value.trim();
 
             if (prompt === "") {
-                // Substituído alert() por uma mensagem na tela para melhor UX
                 solutionOutputDiv.classList.add('hidden');
                 errorMessageDiv.classList.remove('hidden');
                 errorMessageDiv.textContent = "Por favor, descreva seu desafio de negócio antes de gerar uma solução.";
                 return;
             }
 
-            // Limpa resultados anteriores e mostra carregamento
             solutionOutputDiv.classList.add('hidden');
             errorMessageDiv.classList.add('hidden');
             solutionLoadingDiv.classList.remove('hidden');
@@ -122,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 const payload = { contents: chatHistory };
-                const apiKey = ""; // A chave da API será fornecida em tempo de execução pelo ambiente Canvas
+                const apiKey = "";
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                 const response = await fetch(apiUrl, {
@@ -149,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 errorMessageDiv.textContent = "Ocorreu um erro ao gerar a solução. Por favor, tente novamente.";
                 console.error('Erro ao chamar a API Gemini:', error);
             } finally {
-                solutionLoadingDiv.classList.add('hidden'); // Esconde o carregamento
+                solutionLoadingDiv.classList.add('hidden');
             }
         });
     }
