@@ -6,8 +6,8 @@
     <title>LIMA RPA SOLUTIONS - Automação Inteligente para seu Negócio</title>
     <!-- Incluindo Tailwind CSS via CDN para estilização rápida e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Link para o arquivo CSS externo (styles.css) -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Link para o arquivo CSS externo (style.css) -->
+    <link rel="stylesheet" href="style.css">
     <!-- Adicionando Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -16,19 +16,14 @@
     <!-- Cabeçalho (Header) -->
     <header class="bg-white shadow-md py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <!-- Logotipo -->
-            <div class="logo">
-                <a href="index.html">
-                    <img src="LOGOTIPO/LIMA RPA SOLUTIONS .png" alt="Logotipo LIMA RPA SOLUTIONS" class="h-16 md:h-20 rounded-md">
-                </a>
-            </div>
+            <!-- Logotipo Removido -->
             <!-- Menu de Navegação -->
             <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Home</a>
-                <a href="#about" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Sobre Nós</a>
-                <a href="#services" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Serviços</a>
-                <a href="#ai-solution-generator" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Gerador de Soluções AI</a>
-                <a href="#contact" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Contato</a>
+                <a href="#home" class="text-dark-text hover:text-primary-blue font-bold text-lg transition-colors duration-300">Home</a>
+                <a href="#about" class="text-dark-text hover:text-primary-blue font-bold text-lg transition-colors duration-300">Sobre Nós</a>
+                <a href="#services" class="text-dark-text hover:text-primary-blue font-bold text-lg transition-colors duration-300">Serviços</a>
+                <!-- Removido: Link para o Gerador de Soluções AI -->
+                <a href="#contact" class="text-dark-text hover:text-primary-blue font-bold text-lg transition-colors duration-300">Contato</a>
             </nav>
             <!-- Botão de CTA no Header -->
             <a href="#contact" class="hidden md:inline-block px-6 py-3 border-2 border-primary-blue text-primary-blue font-bold rounded-lg hover:bg-primary-blue hover:text-white transition-all duration-300" id="headerCtaBtn">
@@ -42,11 +37,11 @@
         <!-- Menu Mobile (oculto por padrão, será mostrado com JS) -->
         <div id="mobileMenu" class="hidden md:hidden bg-white py-4 shadow-inner">
             <nav class="flex flex-col items-center space-y-4">
-                <a href="#home" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Home</a>
-                <a href="#about" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Sobre Nós</a>
-                <a href="#services" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Serviços</a>
-                <a href="#ai-solution-generator" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Gerador de Soluções AI</a>
-                <a href="#contact" class="text-dark-text hover:text-primary-blue font-medium transition-colors duration-300">Contato</a>
+                <a href="#home" class="text-dark-text hover:text-primary-blue font-bold text-lg transition-colors duration-300">Home</a>
+                <a href="#about" class="text-dark-text hover:text-primary-blue font-bold text-lg transition-colors duration-300">Sobre Nós</a>
+                <a href="#services" class="text-dark-text hover:text-primary-blue font-bold text-lg transition-colors duration-300">Serviços</a>
+                <!-- Removido: Link para o Gerador de Soluções AI no menu mobile -->
+                <a href="#contact" class="text-dark-text hover:text-primary-blue font-bold text-lg transition-colors duration-300">Contato</a>
                 <a href="#contact" class="px-6 py-3 border-2 border-primary-blue text-primary-blue font-bold rounded-lg hover:bg-primary-blue hover:text-white transition-all duration-300">
                     Solicite um Orçamento
                 </a>
@@ -56,7 +51,7 @@
 
     <main>
         <!-- Seção Hero (Banner Principal) -->
-        <section id="home" class="relative bg-cover bg-center text-white py-24 md:py-36 flex items-center justify-center min-h-[500px]" style="background-image: url('https://placehold.co/1920x800/0056b3/ffffff?text=Fundo+LIMA+RPA&font-size=10');">
+        <section id="home" class="relative bg-cover bg-center text-white py-24 md:py-36 flex items-center justify-center min-h-[500px]" style="background-image: url('https://placehold.co/1920x800/0056b3/f0f0f0?text=rpa&font-size=5');">
             <div class="absolute inset-0 bg-black opacity-60"></div>
             <div class="container mx-auto px-4 text-center relative z-10">
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Transforme sua Operação com Automação Inteligente</h1>
@@ -99,55 +94,79 @@
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-12">Nossos Serviços em Destaque</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Cartão de Serviço 1 -->
+                    <!-- Cartão de Serviço 1: Automação de Processos -->
                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 text-left">
                         <i class="fas fa-robot text-4xl text-primary-blue mb-4"></i>
                         <h3 class="text-2xl font-semibold text-dark-text mb-3">Automação de Processos</h3>
                         <p class="text-medium-gray-text mb-4">Otimizamos suas tarefas repetitivas e baseadas em regras com robôs inteligentes, liberando sua equipe para atividades estratégicas.</p>
-                        <!-- Removido: <a href="#" class="text-primary-blue font-bold hover:underline">Saiba Mais <i class="fas fa-arrow-right ml-2"></i></a> -->
                     </div>
-                    <!-- Cartão de Serviço 2 -->
+                    <!-- Cartão de Serviço 2: Consultoria RPA -->
                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 text-left">
                         <i class="fas fa-brain text-4xl text-primary-blue mb-4"></i>
                         <h3 class="text-2xl font-semibold text-dark-text mb-3">Consultoria RPA</h3>
                         <p class="text-medium-gray-text mb-4">Orientação especializada para identificar, planejar e implementar soluções RPA que se alinham perfeitamente aos seus objetivos de negócio.</p>
-                        <!-- Removido: <a href="#" class="text-primary-blue font-bold hover:underline">Saiba Mais <i class="fas fa-arrow-right ml-2"></i></a> -->
                     </div>
-                    <!-- Cartão de Serviço 3 -->
+                    <!-- Cartão de Serviço 3: Financeiro -->
                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 text-left">
-                        <i class="fas fa-chalkboard-teacher text-4xl text-primary-blue mb-4"></i>
-                        <h3 class="text-2xl font-semibold text-dark-text mb-3">Treinamento e Capacitação</h3>
-                        <p class="text-medium-gray-text mb-4">Capacitamos sua equipe para operar e gerenciar as soluções RPA, garantindo a autonomia e o sucesso a longo prazo.</p>
-                        <!-- Removido: <a href="#" class="text-primary-blue font-bold hover:underline">Saiba Mais <i class="fas fa-arrow-right ml-2"></i></a> -->
+                        <i class="fas fa-dollar-sign text-4xl text-primary-blue mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-3">Financeiro</h3>
+                        <p class="text-medium-gray-text mb-4">
+                            Otimize suas operações financeiras com automação:
+                            <ul class="list-disc list-inside mt-2">
+                                <li>Processamento Automatizado de Faturas</li>
+                                <li>Conciliação Bancária Automática</li>
+                                <li>Relatórios Financeiros Automatizados</li>
+                                <li>Auditoria Automatizada</li>
+                                <li>Gestão de Riscos</li>
+                            </ul>
+                        </p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Nova Seção: Gerador de Ideias de Solução RPA com AI -->
-        <section id="ai-solution-generator" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-12">Gerador de Ideias de Solução RPA ✨</h2>
-                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-medium-gray-text">
-                    Descreva um desafio de negócio ou um processo que você gostaria de automatizar, e nossa IA irá sugerir uma ideia de solução de RPA para você!
-                </p>
-                <div class="max-w-2xl mx-auto bg-light-gray-bg p-8 rounded-xl shadow-lg text-left">
-                    <label for="businessChallenge" class="block text-dark-text text-sm font-bold mb-2">
-                        Seu Desafio de Negócio ou Processo:
-                    </label>
-                    <textarea id="businessChallenge" rows="6" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue mb-6" placeholder="Ex: 'Preciso automatizar a entrada de dados de faturas no meu sistema ERP.' ou 'Quero otimizar o processo de atendimento ao cliente.'"></textarea>
-                    <button id="generateSolutionBtn" class="w-full bg-primary-blue hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-300">
-                        Gerar Ideia de Solução ✨
-                    </button>
-                    <div id="solutionLoading" class="hidden text-center mt-6 text-primary-blue">
-                        <i class="fas fa-spinner fa-spin mr-2"></i> Gerando sua ideia de solução...
+                    <!-- Cartão de Serviço 4: Comercial -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 text-left">
+                        <i class="fas fa-handshake text-4xl text-primary-blue mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-3">Comercial</h3>
+                        <p class="text-medium-gray-text mb-4">
+                            Impulsione suas vendas com automação comercial:
+                            <ul class="list-disc list-inside mt-2">
+                                <li>Automação de propostas</li>
+                                <li>Geração de propostas assistida por IA</li>
+                                <li>Análise de RFPs e solicitações</li>
+                                <li>Qualificação de leads</li>
+                                <li>Previsões de vendas</li>
+                                <li>Integração de dados comerciais</li>
+                            </ul>
+                        </p>
                     </div>
-                    <div id="solutionOutput" class="mt-8 p-6 bg-white border border-gray-200 rounded-lg shadow-inner hidden">
-                        <h3 class="text-xl font-semibold text-dark-text mb-4">Sua Ideia de Solução RPA:</h3>
-                        <p id="solutionText" class="text-medium-gray-text whitespace-pre-wrap"></p>
+                    <!-- Novo Cartão de Serviço: RH -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 text-left">
+                        <i class="fas fa-comments text-4xl text-primary-blue mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-3">RH</h3>
+                        <p class="text-medium-gray-text mb-4">
+                            Otimize a gestão de pessoas com automação em RH:
+                            <ul class="list-disc list-inside mt-2">
+                                <li>Gestão de dados de funcionários</li>
+                                <li>Gestão de documentos</li>
+                                <li>Processamento de folha de pagamento</li>
+                                <li>Gestão de benefícios</li>
+                                <li>Relatórios e análises</li>
+                            </ul>
+                        </p>
                     </div>
-                    <div id="errorMessage" class="hidden text-center mt-6 text-red-600">
-                        Ocorreu um erro ao gerar a solução. Por favor, tente novamente.
+                    <!-- Novo Cartão de Serviço: TI -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 text-left">
+                        <i class="fas fa-laptop-code text-4xl text-primary-blue mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-3">TI</h3>
+                        <p class="text-medium-gray-text mb-4">
+                            Acelere suas operações de TI com automação:
+                            <ul class="list-disc list-inside mt-2">
+                                <li>Automação de workflow</li>
+                                <li>Automação de Testes de Software</li>
+                                <li>Gerenciamento de Versões</li>
+                                <li>Automação de Deploy</li>
+                                <li>Automação na nuvem</li>
+                                <li>Integração de sistemas através de automação</li>
+                            </ul>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -157,7 +176,7 @@
         <section class="py-16 md:py-24 bg-primary-blue text-white text-center">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para Automatizar seu Futuro?</h2>
-                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Entre em contato conosco hoje mesmo e descubra como as soluções de RPA da LIMA SOLUTIONS podem transformar sua operação e impulsionar seu crescimento.</p>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Otimize processos, reduza custos e aumente a eficiência com as soluções RPA da LIMA SOLUTIONS.</p>
                 <a href="#contact" class="inline-block px-8 py-4 bg-secondary-green text-white text-lg font-bold rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300">
                     Fale Conosco Agora!
                 </a>
@@ -168,66 +187,19 @@
         <section id="contact" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-12">Entre em Contato</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                    <!-- Formulário de Contato -->
-                    <div class="bg-light-gray-bg p-8 rounded-xl shadow-lg text-left">
-                        <h3 class="text-2xl font-semibold text-dark-text mb-6">Envie-nos uma Mensagem</h3>
-                        <form id="contactForm" class="space-y-6">
-                            <div>
-                                <label for="name" class="block text-dark-text text-sm font-bold mb-2">Nome Completo</label>
-                                <input type="text" id="name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue" placeholder="Seu Nome" required>
-                            </div>
-                            <div>
-                                <label for="email" class="block text-dark-text text-sm font-bold mb-2">Email</label>
-                                <input type="email" id="email" name="email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue" placeholder="seu.email@exemplo.com" required>
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-dark-text text-sm font-bold mb-2">Telefone (Opcional)</label>
-                                <input type="tel" id="phone" name="phone" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue" placeholder="(XX) XXXX-XXXX">
-                            </div>
-                            <div>
-                                <label for="subject" class="block text-dark-text text-sm font-bold mb-2">Assunto</label>
-                                <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue" placeholder="Assunto da Mensagem" required>
-                            </div>
-                            <div>
-                                <label for="message" class="block text-dark-text text-sm font-bold mb-2">Mensagem</label>
-                                <textarea id="message" name="message" rows="6" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue" placeholder="Sua mensagem..." required></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-primary-blue hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-300">
-                                Enviar Mensagem
-                            </button>
-                        </form>
-                    </div>
-                    <!-- Informações de Contato e Mapa -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-left">
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-12 items-start justify-items-center">
+                    <!-- Informações de Contato -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg text-left max-w-lg w-full">
                         <h3 class="text-2xl font-semibold text-dark-text mb-6">Nossas Informações</h3>
-                        <!-- Endereço Atualizado -->
-                        <p class="text-medium-gray-text mb-4"><i class="fas fa-map-marker-alt mr-3 text-primary-blue"></i> Rua Arthur Lundgren 23</p>
-                        <!-- Telefone Clicável Atualizado -->
                         <p class="text-medium-gray-text mb-4">
                             <i class="fas fa-phone mr-3 text-primary-blue"></i>
                             <a href="tel:+5511958437220" class="text-medium-gray-text hover:text-primary-blue transition-colors duration-300">(11) 95843-7220</a>
                         </p>
-                        <!-- Email Clicável Atualizado -->
                         <p class="text-medium-gray-text mb-4">
                             <i class="fas fa-envelope mr-3 text-primary-blue"></i>
                             <a href="mailto:mateuslima5300@gmail.com" class="text-medium-gray-text hover:text-primary-blue transition-colors duration-300">mateuslima5300@gmail.com</a>
                         </p>
                         <p class="text-medium-gray-text mb-6"><i class="fas fa-clock mr-3 text-primary-blue"></i> Segunda a Sexta: 9h - 18h</p>
-
-                        <!-- Mapa do Google Maps -->
-                        <div class="map-container rounded-lg overflow-hidden shadow-md">
-                            <!--
-                                Para exibir o mapa da "Rua Arthur Lundgren 23",
-                                você precisará ir ao Google Maps, pesquisar pelo endereço,
-                                clicar em "Compartilhar" (ou "Share"),
-                                depois em "Incorporar um mapa" (ou "Embed a map")
-                                e copiar o código `<iframe>` fornecido.
-                                Substitua o `src` abaixo pelo `src` que você copiar do Google Maps.
-                                O iframe atual é um placeholder para a Avenida Paulista.
-                            -->
-                            <img src="https://placehold.co/600x400/cccccc/333333?text=Mapa+da+Rua+Arthur+Lundgren+23" alt="Placeholder do Mapa" class="w-full h-full object-cover">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -236,31 +208,18 @@
 
     <!-- Rodapé (Footer) -->
     <footer class="bg-dark-text text-white py-12">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left">
             <!-- Coluna 1: Contato -->
             <div>
                 <h3 class="text-xl font-bold mb-4">Contato</h3>
-                <p class="text-medium-gray-text mb-2">Rua Arthur Lundgren 23</p>
                 <p class="text-medium-gray-text mb-2">Telefone: (11) 95843-7220</p>
                 <p class="text-medium-gray-text">Email: mateuslima5300@gmail.com</p>
             </div>
-            <!-- Coluna 2: Links Úteis -->
-            <div>
-                <h3 class="text-xl font-bold mb-4">Links Úteis</h3>
-                <ul>
-                    <li class="mb-2"><a href="#" class="text-medium-gray-text hover:text-primary-blue transition-colors duration-300">Política de Privacidade</a></li>
-                    <li class="mb-2"><a href="#" class="text-medium-gray-text hover:text-primary-blue transition-colors duration-300">Termos de Uso</a></li>
-                    <li class="mb-2"><a href="#" class="text-medium-gray-text hover:text-primary-blue transition-colors duration-300">Carreiras</a></li>
-                </ul>
-            </div>
-            <!-- Coluna 3: Siga-nos -->
+            <!-- Coluna 2: Siga-nos -->
             <div>
                 <h3 class="text-xl font-bold mb-4">Siga-nos</h3>
                 <div class="flex justify-center md:justify-start space-x-4">
-                    <a href="#" target="_blank" class="text-white hover:text-primary-blue transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" target="_blank" class="text-white hover:text-primary-blue transition-colors duration-300 text-2xl"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" target="_blank" class="text-white hover:text-primary-blue transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank" class="text-white hover:text-primary-blue transition-colors duration-300 text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/mateus-lima-411651288" target="_blank" class="text-white hover:text-primary-blue transition-colors duration-300 text-2xl"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
