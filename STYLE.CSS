@@ -1,4 +1,4 @@
-/* styles.css */
+/* style.css */
 
 /* Configuração do Tailwind para usar a fonte Inter e cores personalizadas */
 /* Este bloco é geralmente configurado em um arquivo tailwind.config.js
@@ -25,6 +25,7 @@ tailwind.config = {
 /* Estilos globais ou específicos que não são puramente Tailwind */
 body {
     font-family: 'Inter', sans-serif; /* Garante a fonte Inter */
+    background-color: #ADD8E6; /* Cor de fundo azul claro */
 }
 
 /* Você pode adicionar mais CSS personalizado aqui, se necessário. */
