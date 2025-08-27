@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -47,17 +47,16 @@
         <div class="container mx-auto px-6 flex justify-between items-center">
             <!-- Logo with a professional placeholder image -->
             <a href="#home" class="flex items-center space-x-2">
-                <img src="https://placehold.co/180x60/1c4c8e/FFFFFF?text=LIMA+RPA" alt="Logotipo LIMA RPA SOLUTIONS" class="h-12 w-auto rounded-md shadow-md">
+                <img src="https://placehold.co/180x60/1c4c8e/FFFFFF?text=LIMA+RPA" alt="Logotipo LIMA RPA SOLUTIONS" class="h-12 w-auto rounded-md">
             </a>
             <!-- Desktop Navigation: Elegant links with smooth transitions -->
             <nav class="hidden md:flex space-x-8 items-center">
                 <a href="#home" class="text-dark-text font-medium hover:text-primary-blue transition-colors duration-300">Home</a>
                 <a href="#about" class="text-dark-text font-medium hover:text-primary-blue transition-colors duration-300">Sobre Nós</a>
                 <a href="#services" class="text-dark-text font-medium hover:text-primary-blue transition-colors duration-300">Serviços</a>
-                <a href="#ai-solution-generator" class="text-dark-text font-medium hover:text-primary-blue transition-colors duration-300">Gerador IA</a>
                 <a href="#contact" class="text-dark-text font-medium hover:text-primary-blue transition-colors duration-300">Contato</a>
                 <!-- Call to Action Button -->
-                <a href="#contact" class="px-6 py-3 border-2 border-primary-blue text-primary-blue font-bold rounded-full hover:bg-primary-blue hover:text-white transition-all duration-300 shadow-lg">
+                <a href="#contact" class="px-6 py-3 bg-primary-blue text-white font-bold rounded-full hover:bg-blue-800 transition-all duration-300 shadow-lg">
                     Solicite um Orçamento
                 </a>
             </nav>
@@ -72,9 +71,8 @@
                 <a href="#home" class="mobile-link text-dark-text hover:text-primary-blue font-medium w-full text-center py-2">Home</a>
                 <a href="#about" class="mobile-link text-dark-text hover:text-primary-blue font-medium w-full text-center py-2">Sobre Nós</a>
                 <a href="#services" class="mobile-link text-dark-text hover:text-primary-blue font-medium w-full text-center py-2">Serviços</a>
-                <a href="#ai-solution-generator" class="mobile-link text-dark-text hover:text-primary-blue font-medium w-full text-center py-2">Gerador IA</a>
                 <a href="#contact" class="mobile-link text-dark-text hover:text-primary-blue font-medium w-full text-center py-2">Contato</a>
-                <a href="#contact" class="mobile-link px-6 py-3 mt-4 w-full text-center border-2 border-primary-blue text-primary-blue font-bold rounded-full hover:bg-primary-blue hover:text-white transition-all duration-300">
+                <a href="#contact" class="mobile-link px-6 py-3 mt-4 w-full text-center bg-primary-blue text-white font-bold rounded-full hover:bg-blue-800 transition-all duration-300">
                     Solicite um Orçamento
                 </a>
             </nav>
@@ -84,7 +82,8 @@
     <main>
         <!-- Hero Section: Dynamic, full-width with a dark overlay -->
         <section id="home" class="relative bg-no-repeat bg-contain bg-center text-white py-24 md:py-48 flex items-center justify-center min-h-[60vh]" style="background-image: url('https://placehold.co/1200x500/1c4c8e/E9ECEF?text=Inova%C3%A7%C3%A3o+e+Efici%C3%AAncia');">
-            <div class="absolute inset-0 bg-dark-text opacity-70"></div>
+            <!-- Overlay alterado de cinza escuro para azul primário para combinar com o tema do site -->
+            <div class="absolute inset-0 bg-primary-blue opacity-70"></div>
             <div class="container mx-auto px-6 text-center relative z-10">
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg">Transforme sua Operação com Automação Inteligente</h1>
                 <p class="text-lg md:text-xl mb-8 max-w-4xl mx-auto drop-shadow-md">Otimize processos, reduza custos e aumente a eficiência com as soluções de RPA da LIMA SOLUTIONS.</p>
@@ -126,7 +125,6 @@
         <section id="services" class="py-16 md:py-24">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-12">Nossos Serviços em Destaque</h2>
-                <!-- Removed the image section as requested -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Service Card 1 -->
                     <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-left">
@@ -140,35 +138,60 @@
                         <h3 class="text-2xl font-semibold text-dark-text mb-3">Consultoria RPA</h3>
                         <p class="text-medium-gray-text">Oferecemos orientação especializada para identificar, planejar e implementar soluções de RPA que se alinham perfeitamente aos seus objetivos de negócio.</p>
                     </div>
-                    <!-- Service Card 3 -->
+                    <!-- New Service Card: Financeiro -->
                     <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-left">
-                        <i class="fas fa-chalkboard-teacher text-4xl text-accent-blue mb-4"></i>
-                        <h3 class="text-2xl font-semibold text-dark-text mb-3">Treinamento e Capacitação</h3>
-                        <p class="text-medium-gray-text">Capacitamos sua equipe para operar e gerenciar as soluções de RPA, garantindo autonomia, sustentabilidade e sucesso a longo prazo.</p>
+                        <i class="fas fa-dollar-sign text-4xl text-accent-blue mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-3">Financeiro</h3>
+                        <p class="text-medium-gray-text mb-2">Otimize suas operações financeiras com automação:</p>
+                        <ul class="list-disc ml-6 text-medium-gray-text space-y-1">
+                            <li>Processamento Automatizado de Faturas</li>
+                            <li>Conciliação Bancária Automática</li>
+                            <li>Relatórios Financeiros Automatizados</li>
+                            <li>Auditoria Automatizada</li>
+                            <li>Gestão de Riscos</li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI Solution Generator Section: Interactive and engaging -->
-        <section id="ai-solution-generator" class="py-16 md:py-24 bg-light-gray-bg">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-4">Gerador de Soluções com IA ✨</h2>
-                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-medium-gray-text">
-                    Descreva um processo que você gostaria de automatizar, e nossa IA irá sugerir uma ideia de solução de RPA para você!
-                </p>
-                <div class="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-2xl text-left">
-                    <label for="businessChallenge" class="block text-dark-text text-sm font-bold mb-2">Seu Desafio ou Processo:</label>
-                    <textarea id="businessChallenge" rows="5" class="shadow-inner border border-gray-300 rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue mb-6 resize-none" placeholder="Ex: 'Preciso automatizar a entrada de dados de faturas no meu sistema ERP.'"></textarea>
-                    <button id="generateSolutionBtn" class="w-full bg-primary-blue hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-full focus:outline-none focus:shadow-outline transition-colors duration-300 flex items-center justify-center shadow-lg">
-                        <span id="btn-text">Gerar Ideia de Solução</span>
-                        <i id="btn-spinner" class="fas fa-spinner fa-spin ml-2 hidden"></i>
-                    </button>
-                    <div id="solutionOutput" class="mt-8 p-6 bg-light-gray-bg border border-gray-300 rounded-lg shadow-inner hidden">
-                        <h3 class="text-xl font-semibold text-dark-text mb-4">Sua Ideia de Solução RPA:</h3>
-                        <p id="solutionText" class="text-medium-gray-text whitespace-pre-wrap leading-relaxed"></p>
+                    <!-- New Service Card: Comercial -->
+                    <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-left">
+                        <i class="fas fa-hand-holding-usd text-4xl text-accent-blue mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-3">Comercial</h3>
+                        <p class="text-medium-gray-text mb-2">Impulsione suas vendas com automação comercial:</p>
+                        <ul class="list-disc ml-6 text-medium-gray-text space-y-1">
+                            <li>Automação de propostas</li>
+                            <li>Geração de propostas assistida por IA</li>
+                            <li>Análise de RFPs e solicitações</li>
+                            <li>Qualificação de leads</li>
+                            <li>Previsões de vendas</li>
+                            <li>Integração de dados comerciais</li>
+                        </ul>
                     </div>
-                    <div id="errorMessage" class="hidden text-center mt-6 p-4 bg-red-100 text-red-700 rounded-lg border border-red-200"></div>
+                    <!-- New Service Card: RH -->
+                    <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-left">
+                        <i class="fas fa-users-cog text-4xl text-accent-blue mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-3">RH</h3>
+                        <p class="text-medium-gray-text mb-2">Otimize a gestão de pessoas com automação em RH:</p>
+                        <ul class="list-disc ml-6 text-medium-gray-text space-y-1">
+                            <li>Gestão de dados de funcionários</li>
+                            <li>Gestão de documentos</li>
+                            <li>Processamento de folha de pagamento</li>
+                            <li>Gestão de benefícios</li>
+                            <li>Relatórios e análises</li>
+                        </ul>
+                    </div>
+                    <!-- New Service Card: TI -->
+                    <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-left">
+                        <i class="fas fa-code text-4xl text-accent-blue mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text mb-3">TI</h3>
+                        <p class="text-medium-gray-text mb-2">Acelere suas operações de TI com automação:</p>
+                        <ul class="list-disc ml-6 text-medium-gray-text space-y-1">
+                            <li>Automação de workflow</li>
+                            <li>Automação de Testes de Software</li>
+                            <li>Gerenciamento de Versões</li>
+                            <li>Automação de Deploy</li>
+                            <li>Automação na nuvem</li>
+                            <li>Integração de sistemas através de automação</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
