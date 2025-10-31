@@ -1,267 +1,529 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LIMARPASOLUTIONS • RPA e Automação Inteligente</title>
-  <meta name="description" content="LIMARPASOLUTIONS ajuda sua empresa a automatizar processos com RPA e IA: do mapeamento à operação 24/7. Inteligência que transforma processos." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="assets/logo.png" />
-  <meta property="og:title" content="LIMARPASOLUTIONS • RPA e Automação Inteligente" />
-  <meta property="og:description" content="Inteligência que transforma processos." />
-  <meta property="og:image" content="assets/logo.png"/>
-  <meta name="theme-color" content="#00C5B8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIMA RPA SOLUTIONS - Automação & Consultoria AI</title>
+    <!-- Incluindo Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Incluindo Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- CSS (BLOCO SIMULADO DE style.css) -->
+    <style>
+        /* Configuração de Cores e Fontes */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        :root {
+            --color-dark-bg: #0d1117; /* Fundo Escuro */
+            --color-text: #e6edf3;     /* Texto Claro */
+            --color-primary: #1f6feb;  /* Azul Principal (Tech) */
+            --color-accent: #2c974b;   /* Verde Destaque (Sucesso) */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-dark-bg);
+            color: var(--color-text);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .bg-dark-bg { background-color: var(--color-dark-bg); }
+        .text-text { color: var(--color-text); }
+        .bg-primary { background-color: var(--color-primary); }
+        .text-primary { color: var(--color-primary); }
+        .hover\:bg-primary-dark:hover { background-color: #1a5acb; }
+        .bg-accent { background-color: var(--color-accent); }
+        .hover\:bg-accent-dark:hover { background-color: #247d3d; }
+
+        .section-padding { padding-top: 5rem; padding-bottom: 5rem; }
+        
+        /* Estilo para animação de cards */
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Estilo para o background abstrato do Hero */
+        .hero-bg-pattern {
+            background-image: radial-gradient(var(--color-primary) 0.5px, transparent 0.5px);
+            background-size: 10px 10px;
+        }
+
+        /* Classes para ícones do Lucide (usadas no JS) */
+        .icon {
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+        /* Mobile: O input de descrição da tarefa usa 100% da largura em todos os ecrãs */
+        #taskInput {
+            resize: vertical; /* Permite redimensionamento vertical */
+        }
+    </style>
 </head>
-<body>
-  <header class="navbar" role="banner">
-    <a href="#topo" class="brand" aria-label="LIMARPASOLUTIONS">
-      <img src="assets/logo.png" alt="Logo LIMA RPA SOLUTIONS" />
-      <span>LIMARPASOLUTIONS</span>
-    </a>
-    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
-    <nav class="nav" role="navigation" aria-label="principal">
-      <a href="#servicos">Serviços</a>
-      <a href="#beneficios">Benefícios</a>
-      <a href="#processo">Como trabalhamos</a>
-      <a href="#cases">Casos de uso</a>
-      <a href="#contato" class="btn-cta">Fale com um especialista</a>
-    </nav>
-  </header>
+<body class="bg-dark-bg text-text">
 
-  <main id="topo">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-media">
-        <img class="hero-logo" src="assets/logo.png" alt="LIMA RPA SOLUTIONS — Inteligência que transforma processos" />
-      </div>
-      <div class="hero-content">
-        <h1 id="hero-title"><span>LIMARPASOLUTIONS</span> — RPA &amp; Automação Inteligente</h1>
-        <p class="subtitle">Inteligência que transforma processos.<br />Automatize tarefas, reduza custos e ganhe escala com bots confiáveis, auditáveis e 24/7.</p>
-        <div class="hero-actions">
-          <a href="#contato" class="btn btn-primary">Converse com um especialista</a>
-          <a href="#servicos" class="btn btn-outline">Ver soluções</a>
+    <!-- HTML (BLOCO PRINCIPAL DE index.html) -->
+    
+    <!-- Cabeçalho (Header) Fixo -->
+    <header class="sticky top-0 z-50 bg-dark-bg/95 backdrop-blur-sm shadow-lg border-b border-gray-700/50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logotipo/Nome -->
+            <a href="#home" class="text-2xl font-bold flex items-center text-primary">
+                <span data-lucide="bot" class="w-6 h-6 mr-2"></span>
+                LIMA RPA SOLUTIONS
+            </a>
+            <!-- Menu de Navegação (Desktop) -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-text/80 hover:text-primary transition-colors duration-200 font-medium">Missão</a>
+                <a href="#services" class="text-text/80 hover:text-primary transition-colors duration-200 font-medium">Serviços</a>
+                <a href="#ai-consulting" class="text-text/80 hover:text-primary transition-colors duration-200 font-medium">Análise AI</a>
+                <a href="#contact" class="text-text/80 hover:text-primary transition-colors duration-200 font-medium">Contacto</a>
+            </nav>
+            <!-- Botão de CTA e Menu Mobile -->
+            <div class="flex items-center space-x-4">
+                <a href="#ai-consulting" class="hidden md:inline-block px-4 py-2 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-dark-bg transition-all duration-300">
+                    Análise AI
+                </a>
+                <button id="mobileMenuButton" class="md:hidden text-primary text-2xl focus:outline-none">
+                    <!-- O ícone é renderizado aqui pelo JS -->
+                    <span data-lucide="menu"></span>
+                </button>
+            </div>
         </div>
-        <ul class="badges" aria-label="destaques">
-          <li>Descoberta → MVP → Produção</li>
-          <li>Rápida implantação</li>
-          <li>Segurança &amp; Compliance</li>
-        </ul>
-      </div>
-      <svg class="hero-shape" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,96L60,85.3C120,75,240,53,360,74.7C480,96,600,160,720,170.7C840,181,960,139,1080,128C1200,117,1320,139,1380,149.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
-      </svg>
-    </section>
-
-    <!-- SERVIÇOS -->
-    <section id="servicos" class="section" aria-labelledby="servicos-title">
-      <div class="section-header">
-        <h2 id="servicos-title">Soluções de RPA para cada área</h2>
-        <p>Projetamos automações sob medida, com governança e foco em resultado.</p>
-      </div>
-      <div class="cards">
-        <article class="card reveal">
-          <h3>RPA de ponta a ponta</h3>
-          <p>Automatizamos tarefas repetitivas em ERPs, CRMs, planilhas e portais. Bots estáveis, monitorados e com logs completos.</p>
-          <ul>
-            <li>Integração com sistemas legados</li>
-            <li>Agendamento e orquestração</li>
-            <li>Auditoria e rastreabilidade</li>
-          </ul>
-        </article>
-        <article class="card reveal">
-          <h3>Captura inteligente (OCR + IA)</h3>
-          <p>Extração de dados de PDFs, e-mails, NF-es e contratos com validação humana opcional (HITL).</p>
-          <ul>
-            <li>Classificação automática</li>
-            <li>Validação por regras de negócio</li>
-            <li>Exportação para seu ERP</li>
-          </ul>
-        </article>
-        <article class="card reveal">
-          <h3>Integrações e APIs</h3>
-          <p>Conectamos sistemas com APIs seguras ou desenvolvemos conectores quando elas não existem.</p>
-          <ul>
-            <li>APIs REST/GraphQL</li>
-            <li>Webhooks e filas</li>
-            <li>Single Sign-On</li>
-          </ul>
-        </article>
-        <article class="card reveal">
-          <h3>Automação com IA generativa</h3>
-          <p>Resumos automáticos, triagem de e-mails, roteamento de tickets e assistentes internos com controle e privacidade.</p>
-          <ul>
-            <li>Prompt engineering &amp; guardrails</li>
-            <li>Knowledge base empresarial</li>
-            <li>Monitoramento de qualidade</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- BENEFÍCIOS -->
-    <section id="beneficios" class="section alt" aria-labelledby="beneficios-title">
-      <div class="section-header">
-        <h2 id="beneficios-title">Resultados que importam</h2>
-        <p>Automação que gera impacto real nos seus indicadores.</p>
-      </div>
-      <div class="stats">
-        <div class="stat reveal"><span class="num" data-target="70">0</span><span class="unit">%</span><p>redução do tempo de execução</p></div>
-        <div class="stat reveal"><span class="num" data-target="3">0</span><span class="unit">x</span><p>ganho médio de produtividade</p></div>
-        <div class="stat reveal"><span class="num" data-target="24">0</span><span class="unit">/7</span><p>operações contínuas</p></div>
-        <div class="stat reveal"><span class="num" data-target="0">0</span><span class="unit"> erros</span><p>processos padronizados</p></div>
-      </div>
-      <p class="disclaimer"></p>
-    </section>
-
-    <!-- PROCESSO -->
-    <section id="processo" class="section" aria-labelledby="processo-title">
-      <div class="section-header">
-        <h2 id="processo-title">Como trabalhamos</h2>
-        <p>Transparência do início ao fim.</p>
-      </div>
-      <ol class="timeline">
-        <li class="reveal">
-          <h3>1. Descoberta</h3>
-          <p>Mapeamento de processos e priorização por impacto/viabilidade.</p>
-        </li>
-        <li class="reveal">
-          <h3>2. Prova de valor</h3>
-          <p>Protótipo/MVP em semanas para validar ROI rapidamente.</p>
-        </li>
-        <li class="reveal">
-          <h3>3. Implementação</h3>
-          <p>Desenvolvimento com governança, segurança e testes automatizados.</p>
-        </li>
-        <li class="reveal">
-          <h3>4. Operação assistida</h3>
-          <p>Monitoramento, suporte, evolução contínua e treinamento dos times.</p>
-        </li>
-      </ol>
-    </section>
-
-    <!-- CASES -->
-    <section id="cases" class="section alt" aria-labelledby="cases-title">
-      <div class="section-header">
-        <h2 id="cases-title">Casos de uso</h2>
-        <p>Alguns exemplos práticos de onde a automação traz alto retorno.</p>
-      </div>
-      <div class="usecases">
-        <article class="use reveal">
-          <h3>Financeiro</h3>
-          <ul>
-            <li>Conciliação bancária e de cartões</li>
-            <li>Contas a pagar/receber</li>
-            <li>Faturamento e emissão de NFs</li>
-          </ul>
-        </article>
-        <article class="use reveal">
-          <h3>Compras &amp; Supply</h3>
-          <ul>
-            <li>Cadastro e qualificação de fornecedores</li>
-            <li>Follow-up de pedidos</li>
-            <li>Atualização de preços</li>
-          </ul>
-        </article>
-        <article class="use reveal">
-          <h3>RH</h3>
-          <ul>
-            <li>Admissão digital</li>
-            <li>Folha e benefícios</li>
-            <li>Onboarding/Offboarding</li>
-          </ul>
-        </article>
-        <article class="use reveal">
-          <h3>Atendimento &amp; Backoffice</h3>
-          <ul>
-            <li>Triagem de tickets e e-mails</li>
-            <li>Atualização de CRM</li>
-            <li>Geração de relatórios</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- TECNOLOGIAS -->
-    <section class="section" aria-labelledby="tech-title">
-      <div class="section-header">
-        <h2 id="tech-title">Tecnologias</h2>
-        <p>Trabalhamos com as principais plataformas do mercado e também desenvolvemos sob medida.</p>
-      </div>
-      <div class="stack">
-        <span class="chip">UiPath</span>
-        <span class="chip">Power Automate</span>
-        <span class="chip">Automation Anywhere</span>
-        <span class="chip">Python</span>
-        <span class="chip">APIs REST</span>
-        <span class="chip">OCR/IA</span>
-      </div>
-    </section>
-
-    <!-- CTA / CONTATO -->
-    <section id="contato" class="section contact alt" aria-labelledby="contato-title">
-      <div class="section-header">
-        <h2 id="contato-title">Pronto para transformar seus processos?</h2>
-        <p>Conte sobre seu desafio. Respondemos rapidamente.</p>
-      </div>
-      <form
-        action="https://formspree.io/f/mwpnppja"
-        method="POST"
-        class="form"
-      >
-        <div class="grid">
-          <label>
-            <span>Nome</span>
-            <input type="text" name="name" required placeholder="Seu nome" />
-          </label>
-          <label>
-            <span>E-mail corporativo</span>
-            <input type="email" name="email" required placeholder="voce@empresa.com.br" />
-          </label>
+        <!-- Menu Mobile (oculto por padrão) -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark-bg/95 border-t border-gray-700">
+            <nav class="flex flex-col items-start px-4 py-4 space-y-3">
+                <a href="#about" class="w-full py-2 hover:bg-gray-800 rounded-md transition-colors duration-200 text-text">Missão</a>
+                <a href="#services" class="w-full py-2 hover:bg-gray-800 rounded-md transition-colors duration-200 text-text">Serviços</a>
+                <a href="#ai-consulting" class="w-full py-2 hover:bg-gray-800 rounded-md transition-colors duration-200 text-text">Análise AI</a>
+                <a href="#contact" class="w-full py-2 hover:bg-gray-800 rounded-md transition-colors duration-200 text-text">Contacto</a>
+                <a href="#ai-consulting" class="w-full text-center px-4 py-2 bg-primary text-dark-bg font-bold rounded-lg mt-3">
+                    Análise AI
+                </a>
+            </nav>
         </div>
-        <label>
-          <span>Empresa</span>
-          <input type="text" name="company" placeholder="Nome da empresa" />
-        </label>
-        <label>
-          <span>Conte-nos sobre o processo</span>
-          <textarea name="message" rows="5" placeholder="Descreva o fluxo que deseja automatizar"></textarea>
-        </label>
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Enviar</button>
-          <a class="btn btn-outline" href="https://wa.me/5511958437220" target="_blank" rel="noopener">Fale no WhatsApp</a>
-        </div>
-        <p class="privacy">Ao enviar, você concorda com nosso <a href="#privacidade">aviso de privacidade</a>.</p>
-      </form>
-    </section>
+    </header>
 
-    <!-- FOOTER -->
-    <footer class="footer" role="contentinfo" id="privacidade">
-      <div class="footer-grid">
-        <div>
-          <img src="assets/logo.png" alt="" class="footer-logo" />
-          <p class="small">LIMARPASOLUTIONS — Inteligência que transforma processos.</p>
-          <p class="small">Contato: mateuslima5300@gmail.com<br>
-            WhatsApp: (11) 95843-7220<br>
-            <a href="https://www.linkedin.com/in/mateus-lima-411651288" target="_blank">LinkedIn</a>
-          </p>
+    <main>
+        <!-- Seção 1: Hero (Banner Principal) -->
+        <section id="home" class="hero-bg-pattern relative section-padding min-h-[70vh] flex items-center justify-center border-b border-gray-800">
+            <div class="absolute inset-0 bg-dark-bg/90"></div>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <p class="text-sm font-semibold uppercase text-accent mb-3 tracking-widest">Automação Robótica de Processos & Inteligência Artificial</p>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-primary">
+                    O Futuro da Eficiência Começa Aqui.
+                </h1>
+                <p class="text-lg md:text-xl mb-8 max-w-4xl mx-auto text-text/70">
+                    Transformamos tarefas manuais em valor estratégico. Reduza custos, elimine erros e liberte a sua equipe para a inovação.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#ai-consulting" class="inline-flex items-center px-8 py-3 bg-accent text-dark-bg text-lg font-bold rounded-xl shadow-lg hover:bg-accent-dark transition-all duration-300 transform hover:scale-105">
+                        Consultoria AI Grátis
+                        <span data-lucide="arrow-right" class="w-5 h-5 ml-2"></span>
+                    </a>
+                    <a href="#services" class="inline-flex items-center px-8 py-3 border border-gray-600 text-text/80 text-lg font-bold rounded-xl hover:bg-gray-800 transition-all duration-300">
+                        Nossos Projetos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Missão e Diferenciais -->
+        <section id="about" class="section-padding bg-dark-bg border-b border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <span class="uppercase text-sm font-semibold text-primary">Nossa Proposta</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">Tecnologia, Estratégia e Resultados</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1: Expertise -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700 card-hover-effect">
+                        <span data-lucide="award" class="text-accent w-8 h-8 mb-4"></span>
+                        <h3 class="text-xl font-semibold mb-2 text-text">Expertise Comprovada</h3>
+                        <p class="text-text/70">Anos de experiência na implementação de robôs robustos e resilientes em ambientes complexos (TOTVS, Linx, SAP).</p>
+                    </div>
+                    <!-- Card 2: Foco em Qualidade -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700 card-hover-effect">
+                        <span data-lucide="trending-up" class="text-accent w-8 h-8 mb-4"></span>
+                        <h3 class="text-xl font-semibold mb-2 text-text">Agilidade e Qualidade</h3>
+                        <p class="text-text/70">Garantimos a precisão máxima na execução de processos críticos, eliminando erros humanos de forma sustentável.</p>
+                    </div>
+                    <!-- Card 3: AI Integrada -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700 card-hover-effect">
+                        <span data-lucide="brain-circuit" class="text-accent w-8 h-8 mb-4"></span>
+                        <h3 class="text-xl font-semibold mb-2 text-text">IA Generativa</h3>
+                        <p class="text-text/70">Integramos a inteligência artificial da Google (Gemini) nas nossas soluções de consultoria e análise de viabilidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Serviços Detalhados (Grid com foco no B2B) -->
+        <section id="services" class="section-padding bg-gray-900 border-b border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <span class="uppercase text-sm font-semibold text-primary">O Que Automatizamos</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">Soluções Verticais e Personalizadas</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Serviço 1: Financeiro & Contabilidade -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <span data-lucide="dollar-sign" class="text-primary w-8 h-8 mb-3"></span>
+                        <h3 class="text-xl font-bold mb-2 text-text">Financeiro & Contabilidade</h3>
+                        <ul class="text-text/70 list-disc list-inside space-y-1 text-sm">
+                            <li>Extração e Conciliação de Faturamento (Ex: Projeto TOTVS/Linx)</li>
+                            <li>Processamento e Lançamento de Notas Fiscais</li>
+                            <li>Fechamento Contábil e Relatórios Gerenciais</li>
+                        </ul>
+                    </div>
+                    <!-- Serviço 2: Comercial & Vendas -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <span data-lucide="briefcase" class="text-primary w-8 h-8 mb-3"></span>
+                        <h3 class="text-xl font-bold mb-2 text-text">Comercial & Vendas</h3>
+                        <ul class="text-text/70 list-disc list-inside space-y-1 text-sm">
+                            <li>Qualificação e Nutrição Automática de Leads (via CRM)</li>
+                            <li>Geração de Propostas e Orçamentos (Assistida por IA)</li>
+                            <li>Atualização de Catálogos de Preços em Múltiplas Plataformas</li>
+                        </ul>
+                    </div>
+                    <!-- Serviço 3: Tecnologia da Informação (TI) -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <span data-lucide="code" class="text-primary w-8 h-8 mb-3"></span>
+                        <h3 class="text-xl font-bold mb-2 text-text">TI & Operações</h3>
+                        <ul class="text-text/70 list-disc list-inside space-y-1 text-sm">
+                            <li>Automação de Testes de Software e Regressão</li>
+                            <li>Gestão de Usuários e Permissões (On/Offboarding)</li>
+                            <li>Monitoramento de Logs e Alertas de Infraestrutura</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Análise Estratégica AI (Foco Total em Viabilidade) -->
+        <section id="ai-consulting" class="section-padding bg-dark-bg border-b border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <span class="uppercase text-sm font-semibold text-accent">Análise Imediata</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 text-primary">Análise Estratégica de Viabilidade com Gemini AI</h2>
+                    <p class="text-lg mt-3 text-text/70 max-w-3xl mx-auto">Descreva a sua tarefa repetitiva e receba uma análise de viabilidade de automação em segundos.</p>
+                </div>
+
+                <div class="max-w-xl mx-auto bg-gray-800 p-6 sm:p-10 rounded-2xl shadow-2xl border border-gray-700">
+                    <div class="text-left">
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-primary">Descreva a Sua Tarefa</h3>
+
+                        <!-- Input 1: Departamento -->
+                        <div class="mb-4">
+                            <label for="departmentSelect" class="block text-sm font-medium text-text mb-1">Departamento:</label>
+                            <select id="departmentSelect" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-accent focus:border-accent text-text transition duration-150">
+                                <option value="Financeiro">Financeiro (Ex: Projeto Strada)</option>
+                                <option value="Comercial">Comercial</option>
+                                <option value="Recursos Humanos">Recursos Humanos (RH)</option>
+                                <option value="Tecnologia da Informação">Tecnologia da Informação (TI)</option>
+                                <option value="Operações / Logística">Operações / Logística</option>
+                            </select>
+                        </div>
+
+                        <!-- Input 2: Descrição da Tarefa -->
+                        <div class="mb-6">
+                            <label for="taskInput" class="block text-sm font-medium text-text mb-1">Descreva a Tarefa Repetitiva em Detalhes:</label>
+                            <textarea id="taskInput" rows="5" placeholder="Ex: 'Acessar o ERP, extrair relatórios diários de faturamento, consolidar no Excel e enviar para 3 diretores.' (Mínimo 20 caracteres para análise)" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-accent focus:border-accent text-text transition duration-150"></textarea>
+                        </div>
+                        
+                        <!-- Botão de Ação -->
+                        <button id="generateScenarioBtn" class="w-full flex justify-center items-center px-6 py-4 bg-primary text-dark-bg font-extrabold rounded-xl shadow-lg hover:bg-primary-dark transition-all duration-300 transform hover:scale-[1.01]">
+                            <span data-lucide="sparkles" class="w-5 h-5 mr-3"></span>
+                            GERAR PROPOSTA DE ROBÔ (Powered by Gemini)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Área de Loading/Resultado da AI -->
+                <div class="max-w-4xl mx-auto mt-10">
+                    <div id="loadingIndicator" class="hidden text-center mt-4 p-6 bg-gray-800 rounded-xl">
+                        <span data-lucide="loader-circle" class="w-8 h-8 text-primary animate-spin mx-auto"></span>
+                        <p class="text-text mt-3">A LIMA AI está a analisar sua tarefa e desenhando o seu Robô...</p>
+                    </div>
+
+                    <div id="resultArea" class="mt-6 p-6 sm:p-8 border-l-4 border-accent bg-gray-900 rounded-xl shadow-xl hidden text-left">
+                        <h3 class="text-2xl font-bold mb-4 text-accent">Análise de Viabilidade Concluída:</h3>
+                        
+                        <div id="robotTitle" class="mb-4 p-3 bg-gray-800 rounded-lg border-l-4 border-primary">
+                            <p class="font-bold text-lg text-primary">Título da Solução:</p>
+                        </div>
+                        
+                        <div id="automationDescription" class="mb-4 p-3 bg-gray-800 rounded-lg">
+                            <p class="font-bold text-lg text-text">Descrição da Automação:</p>
+                        </div>
+                        
+                        <div id="valueProposition" class="mb-4 p-3 bg-gray-800 rounded-lg border-l-4 border-accent">
+                            <p class="font-bold text-lg text-accent">Proposta de Valor e Próximos Passos:</p>
+                        </div>
+                        
+                        <p class="mt-6 text-sm text-text/60 font-medium text-center">
+                            A LIMA RPA SOLUTIONS transforma esta análise em realidade.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Área de Mensagens Temporárias (em vez de alert/confirm) -->
+                <div id="messageContainer" class="fixed top-0 right-0 m-4 z-50"></div>
+            </div>
+        </section>
+
+
+        <!-- Seção 5: Chamada para Ação Final -->
+        <section class="py-16 bg-gray-900 text-center border-t border-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Inicie Sua Transformação Digital Hoje</h2>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-text/70">Não perca tempo com tarefas repetitivas. Garanta mais de 2 horas/dia de produtividade.</p>
+                <a href="#contact" class="inline-block px-10 py-4 bg-accent text-dark-bg text-xl font-bold rounded-xl shadow-xl hover:bg-accent-dark transition-all duration-300 transform hover:scale-105">
+                    Fale com Nossos Especialistas
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé (Footer) -->
+    <footer id="contact" class="bg-gray-900 text-text/80 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            
+            <!-- Coluna 1: Logo e Descrição -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4 text-primary">LIMA RPA SOLUTIONS</h3>
+                <p class="text-sm">Parceiro estratégico em automação de processos de missão crítica. Redefinindo a produtividade com IA e RPA.</p>
+            </div>
+
+            <!-- Coluna 2: Contato -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-white">Contacto</h3>
+                <p class="mb-2 flex items-center justify-center md:justify-start">
+                    <span data-lucide="phone" class="w-4 h-4 mr-2 text-primary"></span>
+                    <a href="tel:+5511958437220" class="hover:text-primary transition-colors duration-200">(11) 95843-7220</a>
+                </p>
+                <p class="flex items-center justify-center md:justify-start">
+                    <span data-lucide="mail" class="w-4 h-4 mr-2 text-primary"></span>
+                    <a href="mailto:mateuslima5300@gmail.com" class="hover:text-primary transition-colors duration-200">mateuslima5300@gmail.com</a>
+                </p>
+            </div>
+            
+            <!-- Coluna 3: Redes Sociais -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-white">Siga-nos</h3>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="https://www.linkedin.com/in/mateus-lima-411651288" target="_blank" class="text-text hover:text-primary transition-colors duration-300 text-2xl" aria-label="LinkedIn">
+                        <span data-lucide="linkedin"></span>
+                    </a>
+                </div>
+            </div>
         </div>
-        <nav aria-label="rodapé">
-          <a href="#servicos">Serviços</a>
-          <a href="#beneficios">Benefícios</a>
-          <a href="#processo">Como trabalhamos</a>
-          <a href="#cases">Casos de uso</a>
-          <a href="#contato">Contato</a>
-        </nav>
-        <div>
-          <p class="small">Privacidade: coletamos apenas dados necessários para contato. Sem compartilhamento com terceiros.</p>
-          <p class="small">© <span id="year"></span> LIMARPASOLUTIONS. Todos os direitos reservados.</p>
+        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-text/50 text-sm">
+            <p>&copy; 2025 LIMA RPA SOLUTIONS. Todos os direitos reservados. | Desenvolvido para GitHub Pages.</p>
         </div>
-      </div>
     </footer>
-  </main>
+
+
+    <!-- JAVASCRIPT (BLOCO SIMULADO DE script.js) -->
+    <script>
+        // Inicializa Lucide Icons
+        lucide.createIcons();
+
+        // --- Variáveis Globais ---
+        const departmentSelect = document.getElementById('departmentSelect');
+        const taskInput = document.getElementById('taskInput');
+        const generateScenarioBtn = document.getElementById('generateScenarioBtn');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const resultArea = document.getElementById('resultArea');
+        const robotTitleDiv = document.getElementById('robotTitle');
+        const automationDescriptionDiv = document.getElementById('automationDescription');
+        const valuePropositionDiv = document.getElementById('valueProposition');
+        const messageContainer = document.getElementById('messageContainer');
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        // Configuração da API Gemini
+        const apiKey = ""; 
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Menu Mobile
+            if (mobileMenuButton && mobileMenu) {
+                const iconSpan = mobileMenuButton.querySelector('span[data-lucide]');
+
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    if (mobileMenu.classList.contains('hidden')) {
+                        iconSpan.setAttribute('data-lucide', 'menu');
+                    } else {
+                        iconSpan.setAttribute('data-lucide', 'x');
+                    }
+                    lucide.createIcons();
+                });
+
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        setTimeout(() => {
+                            mobileMenu.classList.add('hidden');
+                            iconSpan.setAttribute('data-lucide', 'menu');
+                            lucide.createIcons();
+                        }, 300);
+                    });
+                });
+            }
+            
+            // 2. Listener do Botão de Análise AI
+            if (generateScenarioBtn) {
+                generateScenarioBtn.addEventListener('click', generateScenario);
+            }
+        });
+
+        // --- Funções de Lógica e API ---
+
+        /**
+         * Função principal para chamar a Gemini API e gerar o cenário de automação.
+         */
+        async function generateScenario() {
+            const department = departmentSelect.value;
+            const task = taskInput.value.trim();
+
+            if (task.length < 20) {
+                showTemporaryMessage('Por favor, forneça uma descrição detalhada da tarefa (mínimo 20 caracteres) para a análise da AI.', 'error');
+                return;
+            }
+
+            // UI Feedback
+            loadingIndicator.classList.remove('hidden');
+            resultArea.classList.add('hidden');
+            generateScenarioBtn.disabled = true;
+
+            // Query: Informação da tarefa
+            const userQuery = `Eu trabalho no departamento de ${department}. A tarefa manual e repetitiva que eu quero automatizar é: "${task}". Atue como um especialista Sênior de RPA e AI Generativa da LIMA RPA SOLUTIONS e crie uma sugestão de robô de automação estruturada.`;
+            
+            // System Prompt: Regras de resposta (curta, alto nível e com a frase de contacto obrigatória)
+            const systemPrompt = "Você é um Consultor Sênior de RPA (Robotic Process Automation) da LIMA RPA SOLUTIONS. Sua tarefa é analisar uma tarefa repetitiva de um cliente e gerar uma proposta de automação estratégica em Português. Sua resposta DEVE ser um objeto JSON estrito e formatado. Mantenha TODAS as respostas (robotTitle, automationDescription, valueProposition) curtas e de alto nível, sem números exatos ou detalhes excessivos. A string no campo 'valueProposition' DEVE OBRIGATORIAMENTE terminar com a frase de contato: ' Para Automatizar seus processos, entre em contato no telefone 11958437220 ou email mateuslima5300@gmail.com'.";
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] },
+                generationConfig: {
+                    responseMimeType: "application/json",
+                    responseSchema: {
+                        type: "OBJECT",
+                        properties: {
+                            "robotTitle": { "type": "STRING", "description": "Um título curto para a solução." },
+                            "automationDescription": { "type": "STRING", "description": "Uma descrição breve (1-2 frases) dos passos principais que o robô executará." },
+                            "valueProposition": { "type": "STRING", "description": "O valor agregado e a chamada final para ação com os dados de contato obrigatórios." }
+                        },
+                        "required": ["robotTitle", "automationDescription", "valueProposition"]
+                    }
+                }
+            };
+
+            try {
+                const response = await fetchWithBackoff(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const jsonText = candidate.content.parts[0].text;
+                    const data = JSON.parse(jsonText);
+                    
+                    // Renderização dos resultados
+                    robotTitleDiv.innerHTML = `<p class="font-bold text-lg text-primary">Título da Solução:</p><p class="mt-1 text-xl font-semibold">${data.robotTitle}</p>`;
+                    automationDescriptionDiv.innerHTML = `<p class="font-bold text-lg text-text">Descrição da Automação:</p><p class="mt-1 text-text/90">${data.automationDescription}</p>`;
+                    valuePropositionDiv.innerHTML = `<p class="font-bold text-lg text-accent">Proposta de Valor e Próximos Passos:</p><p class="mt-1 text-text/90">${data.valueProposition}</p>`;
+                    
+                    resultArea.classList.remove('hidden');
+                    showTemporaryMessage('Análise de Viabilidade Gerada com Sucesso!', 'success');
+
+                } else {
+                    throw new Error('Resposta da AI incompleta ou falha na geração JSON.');
+                }
+
+            } catch (error) {
+                console.error('Erro na chamada da API:', error);
+                showTemporaryMessage('Erro Crítico: Não foi possível gerar a sugestão. Tente novamente ou revise sua descrição.', 'error');
+            } finally {
+                loadingIndicator.classList.add('hidden');
+                generateScenarioBtn.disabled = false;
+            }
+        }
+        
+        /**
+         * Exibe uma mensagem temporária na UI (substituto de alert).
+         */
+        function showTemporaryMessage(message, type = 'info') {
+            const messageElement = document.createElement('div');
+            let bgColor = 'bg-yellow-800 border-yellow-600 text-yellow-100';
+            let icon = 'info';
+            if (type === 'error') {
+                bgColor = 'bg-red-800 border-red-600 text-red-100';
+                icon = 'alert-triangle';
+            } else if (type === 'success') {
+                bgColor = 'bg-accent border-green-600 text-dark-bg';
+                icon = 'check-circle';
+            }
+
+            messageElement.className = `p-4 rounded-lg shadow-xl border-l-4 font-semibold ${bgColor} mb-3 flex items-center transition-all duration-300 transform translate-x-full opacity-0`;
+            messageElement.innerHTML = `<span data-lucide="${icon}" class="w-5 h-5 mr-3 icon"></span> ${message}`;
+            
+            messageContainer.appendChild(messageElement);
+            lucide.createIcons(); 
+            
+            setTimeout(() => {
+                messageElement.style.transform = 'translateX(0)';
+                messageElement.style.opacity = '1';
+            }, 10);
+
+            setTimeout(() => {
+                messageElement.style.transform = 'translateX(100%)';
+                messageElement.style.opacity = '0';
+                setTimeout(() => messageElement.remove(), 300);
+            }, 6000);
+        }
+
+        /**
+         * Lógica de Exponential Backoff para retentar chamadas de API falhadas.
+         */
+        async function fetchWithBackoff(url, options, maxRetries = 5) {
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.ok) {
+                        return response;
+                    }
+                    if (response.status === 429 || response.status >= 500) {
+                        throw new Error(`Retryable error with status: ${response.status}`);
+                    }
+                    return response;
+
+                } catch (error) {
+                    if (i === maxRetries - 1) throw error;
+                    const delay = Math.pow(2, i) * 1000 + Math.random() * 500;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+            }
+        }
+    </script>
+</body>
+</html>
 
   <script src="script.js"></script>
 </body>
